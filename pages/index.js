@@ -1,13 +1,9 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import { useViewerConnection, EthereumAuthProvider, useViewerRecord } from '@self.id/framework';
 import styles from '../styles/Home.module.css';
 
-
-
 export default function Home() {
-
   const [connection, connect, disconnect] = useViewerConnection();
   const record = useViewerRecord('basicProfile');
   const [profile, setProfile] = useState({});
@@ -21,7 +17,6 @@ export default function Home() {
   };
 
   const handleSaveViewerRecord = () => record.merge(profile).then(() => alert('Profile Saved'));
-
 
   const handleProfileInputChange = (event) => setProfile({ ...profile, [event.target.name]: event.target.value });
 
