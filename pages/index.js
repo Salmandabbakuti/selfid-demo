@@ -24,7 +24,7 @@ export default function Home() {
     if (record) {
       setProfile(record.content);
     }
-  }, [connection, record]);
+  }, [connection]);
 
   return (
     <div className={styles.container}>
